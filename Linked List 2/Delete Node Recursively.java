@@ -66,6 +66,6 @@ public class Solution {
 		if(i==0)
             			return head.next;
         		head.next=deleteNodeRec(head.next,i-1);
-        		Sreturn head;
+        		return head;
 	}
 }
