@@ -178,6 +178,21 @@ public class LinkedListUse {
         	return head;
 	}
 
+	public static Node<Integer> reverseRecursively(Node<Integer> head) {
+		if(head == null || head.next == null ){
+			return head;
+		}
+		Node<Integer> smallHead = reverseRecursively(head.next);
+		Node<Integer> tail = smallHead;
+		while(tail.next != null){
+			tail = tail.next;
+		}
+		tail.next = head;
+		head.next = null;
+		return smallHead;
+
+	}
+
 	public static void main(String[] args) {
 //		Node<Integer> head = createLinkedList();
 //		Node<Integer> head = takeInput();
