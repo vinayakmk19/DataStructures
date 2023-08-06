@@ -165,6 +165,19 @@ public class LinkedListUse {
         		return head;
 	}
 
+	public static Node<Integer> deleteNodeRecursively(Node<Integer> head, int pos) {
+    		if(head==null){
+			return head;
+		}
+            	if(pos==0){
+			return head.next;
+		}
+            			
+        	Node<Integer> smallHead = deleteNodeRec(head.next,pos-1);
+		head.next = smallHead;
+        	return head;
+	}
+
 	public static void main(String[] args) {
 //		Node<Integer> head = createLinkedList();
 //		Node<Integer> head = takeInput();
