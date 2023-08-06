@@ -60,12 +60,15 @@ Sample Output 2 :
 
 public class Solution {
 	public static LinkedListNode<Integer> deleteNodeRec(LinkedListNode<Integer> head, int i) {
-    		if(head==null)
-            			return head;
-        		
-		if(i==0)
-            			return head.next;
-        		head.next=deleteNodeRec(head.next,i-1);
-        		return head;
+    		if(head==null){
+			return head;
+		}
+            	if(i==0){
+			return head.next;
+		}
+            			
+        	Node<Integer> smallHead = deleteNodeRec(head.next,i-1);
+		head.next = smallHead;
+        	return head;
 	}
 }
